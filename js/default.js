@@ -54,11 +54,12 @@ $(document).ready(function(){
         // ------ AJAX -----
         if (!$('.form-control').hasClass('is-invalid')) {
             $.ajax({
+                url: 'https://fazarosta.com/add/',
+                dataType: "json",
                 type: 'POST',
-                url: 'https://webhook.site/096ec6dd-ad58-4f29-a5d3-9f8778287172',
-                data: JSON.stringify(formData),
-                success: function (data) {
-                    console.log(data);
+                data: formData,
+                success: function (result) {
+                    console.log(result);
                 }
             });
         }
